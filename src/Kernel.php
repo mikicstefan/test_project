@@ -30,6 +30,7 @@ class Kernel extends BaseKernel
   {
     $contents = require $this->getProjectDir() . '/config/bundles.php';
     foreach ($contents as $class => $envs) {
+      /** @noinspection PhpIllegalArrayKeyTypeInspection */
       if ($envs[$this->environment] ?? $envs['all'] ?? false) {
         yield new $class();
       }
@@ -56,7 +57,7 @@ class Kernel extends BaseKernel
 
     $confDirs = [
       $this->getProjectDir() . '/config',
-      __DIR__ . '/Test/config',
+      __DIR__ . '/Todo/config',
     ];
 
     foreach ($confDirs as $confDir) {
@@ -86,7 +87,7 @@ class Kernel extends BaseKernel
   {
     $confDirs = [
         $this->getProjectDir() . '/config',
-        __DIR__ . '/Test/config',
+        __DIR__ . '/Todo/config',
     ];
 
     foreach ($confDirs as $confDir) {
