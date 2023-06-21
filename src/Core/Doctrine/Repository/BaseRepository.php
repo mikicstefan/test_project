@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RApp\Core\Doctrine\Repository;
+namespace App\Core\Doctrine\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
