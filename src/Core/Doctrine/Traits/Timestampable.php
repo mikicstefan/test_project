@@ -1,6 +1,6 @@
 <?php
 
-namespace RectangleHealth\PMBForms\Core\Doctrine\Traits;
+namespace App\Core\Doctrine\Traits;
 
 use DateTime;
 use Doctrine\ORM\Mapping\Column;
@@ -11,11 +11,6 @@ use Exception;
 /**
  * Trait Timestampable
  * Don't forget to add "#[HasLifecycleCallbacks]" attribute to your entity
- *
- * @package RectangleHealth\PMBForms\Core\Doctrine\Traits
- * @author DEVŌT <devot.team>
- * @copyright Rectangle Health - Consent To Dental Imagery
- *
  */
 trait Timestampable
 {

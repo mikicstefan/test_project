@@ -2,18 +2,15 @@
 
 declare(strict_types=1);
 
-namespace RectangleHealth\PMBForms\Core\Doctrine\Repository;
+namespace RApp\Core\Doctrine\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
-use RectangleHealth\PMBForms\Core\Doctrine\Helpers\CriteriaProcessor;
+use App\Core\Doctrine\Helpers\CriteriaProcessor;
 
 /**
  * Class BaseRepository.
- *
- * @author DEVŌT <devot.team>
- * @copyright Rectangle Health - Consent To Dental Imagery
  */
 abstract class BaseRepository extends ServiceEntityRepository
 {

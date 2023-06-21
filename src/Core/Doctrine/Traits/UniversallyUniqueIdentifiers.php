@@ -1,6 +1,6 @@
 <?php
 
-namespace RectangleHealth\PMBForms\Core\Doctrine\Traits;
+namespace App\Core\Doctrine\Traits;
 
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\PrePersist;
@@ -10,9 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Trait UniversallyUniqueIdentifiers
- *
- * @package RectangleHealth\PMBForms\Core\Doctrine\Traits
- * @author DEVŌT <devot.team>
  */
 trait UniversallyUniqueIdentifiers
 {
