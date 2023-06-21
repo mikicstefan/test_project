@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Core\REST\Exception;
 
 use Symfony\Component\HttpFoundation\Response;
-use RectangleHealth\PMBForms\Domain\Translation\ValueObject\ErrorMessage;
+use App\Domain\Translation\ValueObject\ErrorMessage;
 
 /**
  * Class ResponseEncodingException

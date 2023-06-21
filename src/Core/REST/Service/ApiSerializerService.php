@@ -2,21 +2,16 @@
 
 declare(strict_types=1);
 
-namespace RectangleHealth\PMBForms\Core\REST\Service;
+namespace App\Core\REST\Service;
 
 use JMS\Serializer\SerializerInterface;
 use JMS\Serializer\SerializationContext;
-use RectangleHealth\PMBForms\Core\REST\Exception\ResponseEncodingException;
-use RectangleHealth\PMBForms\Core\REST\Representation\ExceptionRepresentation;
+use App\Core\REST\Exception\ResponseEncodingException;
+use App\Core\REST\Representation\ExceptionRepresentation;
 
 /**
  * Class ApiSerializerService
  * Handles serializing and encoding the representations
- *
- * @package RectangleHealth\PMBForms\Core\REST\Service
- * @author DEVŌT <devot.team>
- * @copyright Rectangle Health - Consent To Dental Imagery
- * @SuppressWarnings(PHPMD)
  */
 final class ApiSerializerService
 {

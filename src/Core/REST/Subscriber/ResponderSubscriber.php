@@ -2,23 +2,18 @@
 
 declare(strict_types=1);
 
-namespace RectangleHealth\PMBForms\Core\REST\Subscriber;
+namespace App\Core\REST\Subscriber;
 
-use RectangleHealth\PMBForms\Domain\PatientRegistration\Representation\DownloadFormRepresentation;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use RectangleHealth\PMBForms\Core\REST\ValueObject\ApiResponse;
-use RectangleHealth\PMBForms\Core\REST\Service\ApiSerializerService;
-use RectangleHealth\PMBForms\Core\REST\Exception\ResponseEncodingException;
+use App\Core\REST\ValueObject\ApiResponse;
+use App\Core\REST\Service\ApiSerializerService;
+use App\Core\REST\Exception\ResponseEncodingException;
 
 /**
  * Class ResponderSubscriber
- *
- * @package RectangleHealth\PMBForms\Core\REST\Subscriber
- * @author DEVŌT <devot.team>
- * @copyright Rectangle Health - Consent To Dental Imagery
  */
 final class ResponderSubscriber implements EventSubscriberInterface
 {
@@ -60,12 +55,6 @@ final class ResponderSubscriber implements EventSubscriberInterface
       $apiResponse->representation(),
       'json'
     );
-
-    if ($apiResponse->representation() instanceof DownloadFormRepresentation) {
-      /** @var array<string> $url */
-      $url = json_decode($body, true);
-      $body  = utf8_decode($url['url']);
-    }
 
     $response = new Response(
       $body,

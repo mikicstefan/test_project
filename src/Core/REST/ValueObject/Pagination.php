@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Core\REST\ValueObject;
 
 use Assert\Assert;
-use RectangleHealth\PMBForms\Domain\Translation\ValueObject\ErrorMessage;
+use App\Domain\Translation\ValueObject\ErrorMessage;
 use Symfony\Component\HttpFoundation\Request;
 
 use function Assert\that;
@@ -13,9 +13,6 @@ use function Assert\that;
 /**
  * Class Pagination
  * Set pagination to given collection
- *
- * @package RectangleHealth\PMBForms\Core\REST\ValueObject
- * @author DEVŌT <devot.team>
  */
 class Pagination
 {

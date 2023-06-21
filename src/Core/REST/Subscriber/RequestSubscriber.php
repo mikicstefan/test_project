@@ -8,16 +8,12 @@ use JsonException;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use RectangleHealth\PMBForms\Domain\Translation\ValueObject\ErrorMessage;
+use App\Domain\Translation\ValueObject\ErrorMessage;
 use App\Core\REST\Exception\RequestDecodingException;
 use App\Core\REST\Exception\UnsupportedRequestException;
 
 /**
  * Class RequestSubscriber
- *
- * @package App\Core\REST\Subscriber
- * @author DEVŌT <devot.team>
- * @copyright Rectangle Health - Consent To Dental Imagery
  */
 final class RequestSubscriber implements EventSubscriberInterface
 {

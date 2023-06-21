@@ -11,7 +11,6 @@ use App\Core\Messenger\Traits\HandleTrait;
 
 /**
  * Class AbstractApiAction
- *
  */
 abstract class AbstractApiAction
 {
