@@ -10,7 +10,7 @@ use App\Domain\Todo\Representation\TodoCollectionRepresentation;
 use Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Todo\Todo\Message\GetTodosMessage;
+use App\Todo\Message\GetTodosMessage;
 
 /**
  * Class GetTodos
@@ -29,12 +29,11 @@ final class GetTodos extends AbstractApiAction
   )]
   public function __invoke(Request $request): ApiResponse
   {
-    dd('srecikic moj!');
     /** @var TodoCollectionRepresentation $representation */
     $representation = $this->handle(
       GetTodosMessage::fromRequest($request)
     );
 
-    return ApiResponse::ok($representation);
+    return ApiResponse::success($representation);
   }
 }

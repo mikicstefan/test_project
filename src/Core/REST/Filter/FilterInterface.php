@@ -1,6 +1,6 @@
 <?php
 
-namespace RectangleHealth\PMBForms\Core\REST\Filter;
+namespace App\Core\REST\Filter;
 
 use Symfony\Component\HttpFoundation\Request;
 
