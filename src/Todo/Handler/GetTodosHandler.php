@@ -9,12 +9,13 @@ use App\Domain\Todo\Representation\TodoRepresentation;
 use App\Domain\Todo\Entity\Todo;
 use App\Domain\Todo\Repository\TodoRepository;
 use App\Todo\Message\GetTodosMessage;
-use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**
  * Class GetTodosHandler
  */
-final class GetTodosHandler implements MessageHandlerInterface
+#[AsMessageHandler]
+final class GetTodosHandler
 {
   /**
    * @param TodoRepository $todoRepository
