@@ -7,7 +7,10 @@ use App\Core\Doctrine\Traits\Created;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
+use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -37,6 +40,19 @@ class Client
   #[Column(name: "last_name", type: "string", length: 96)]
   #[Assert\NotBlank]
   private string $lastName;
+
+  /**
+   * Client can have many projects
+   *
+   * @var ArrayCollection|Collection
+   */
+  #[OneToMany(mappedBy: "client", targetEntity: Project::class)]
+  private Collection|ArrayCollection $projects;
+
+  public function __construct()
+  {
+    $this->projects = new ArrayCollection();
+  }
 
   // Getters and Setters start
   /**
