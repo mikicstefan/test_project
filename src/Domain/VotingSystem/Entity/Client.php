@@ -23,6 +23,7 @@ class Client
 
   #[Column(name: "username", type: "string", length: 128, unique: true)]
   #[Assert\NotBlank]
+  #[Assert\Email]
   private string $username;
 
   #[Column(name: "password", type: "string", length: 96)]
