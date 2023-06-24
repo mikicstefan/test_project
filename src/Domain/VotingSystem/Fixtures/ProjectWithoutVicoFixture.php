@@ -8,11 +8,11 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
 /**
- * Class ProjectFixtures
+ * Class ProjectWithoutVicoFixture
  */
-class ProjectFixtures extends Fixture implements DependentFixtureInterface
+class ProjectWithoutVicoFixture extends Fixture implements DependentFixtureInterface
 {
-  public const TEST_PROJECT_REFERENCE = 'project';
+  public const TEST_PROJECT_WITHOUT_VICO_REFERENCE = 'project-without-vico';
   public const TEST_PROJECT_TITLE = 'Title ';
 
   /**
@@ -21,7 +21,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
    */
   public function load(ObjectManager $manager): void
   {
-    $client = $this->getReference(ClientFixtures::TEST_CLIENT_REFERENCE);
+    $client = $this->getReference(ClientFixture::TEST_CLIENT_REFERENCE);
 
     $project = new Project();
     $project->setTitle(self::TEST_PROJECT_TITLE);
@@ -30,14 +30,13 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
     $manager->persist($project);
     $manager->flush();
 
-    $this->addReference(self::TEST_PROJECT_REFERENCE, $project);
+    $this->addReference(self::TEST_PROJECT_WITHOUT_VICO_REFERENCE, $project);
   }
 
   public function getDependencies()
   {
     return [
-      ClientFixtures::class,
-      VicoFixtures::class
+      ClientFixture::class
     ];
   }
 }

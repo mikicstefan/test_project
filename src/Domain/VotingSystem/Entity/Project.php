@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
+use Exception;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -26,8 +27,8 @@ class Project
   use Created;
   use Updated;
 
-  #[Column(name: "title", type: "string", length: 255)]
   #[Assert\NotBlank]
+  #[Column(name: "title", type: "string", length: 255)]
   private string $title;
 
   /**
@@ -36,7 +37,7 @@ class Project
    * @var Client
    */
   #[ManyToOne(targetEntity: Client::class, inversedBy: 'projects')]
-  #[JoinColumn(name: 'client_id', referencedColumnName: 'id', nullable: false)]
+  #[JoinColumn(name: 'creator_id', referencedColumnName: 'id', nullable: false)]
   private Client $creator;
 
   /**
@@ -53,7 +54,7 @@ class Project
    */
   #[Assert\NotBlank]
   #[Assert\Range(min: 1, max: 5)]
-  #[Column(name: "rating", type: "int", nullable: true)]
+  #[Column(name: "rating", type: "integer", nullable: true)]
   private ?int $rating = null;
 
   /**
@@ -68,7 +69,7 @@ class Project
    */
   #[Assert\NotBlank]
   #[Assert\Range(min: 1, max: 5)]
-  #[Column(name: "communication_rating", type: "int", nullable: true)]
+  #[Column(name: "communication_rating", type: "integer", nullable: true)]
   private ?int $communicationRating = null;
 
   /**
@@ -76,7 +77,7 @@ class Project
    */
   #[Assert\NotBlank]
   #[Assert\Range(min: 1, max: 5)]
-  #[Column(name: "quality_of_work_rating", type: "int", nullable: true)]
+  #[Column(name: "quality_of_work_rating", type: "integer", nullable: true)]
   private ?int $qualityOfWorkRating = null;
 
   /**
@@ -84,7 +85,7 @@ class Project
    */
   #[Assert\NotBlank]
   #[Assert\Range(min: 1, max: 5)]
-  #[Column(name: "value_for_money_rating", type: "int", nullable: true)]
+  #[Column(name: "value_for_money_rating", type: "integer", nullable: true)]
   private ?int $valueForMoneyRating = null;
 
   // Getters and Setters start
@@ -134,6 +135,7 @@ class Project
 
   /**
    * @param Vico|null $vico
+   * @return Project
    */
   public function setVico(?Vico $vico): Project
   {
@@ -151,6 +153,7 @@ class Project
 
   /**
    * @param int|null $rating
+   * @return Project
    */
   public function setRating(?int $rating): Project
   {
@@ -158,10 +161,7 @@ class Project
     return $this;
   }
 
-  /**
-   * @return string|null
-   */
-  public function getReview(): ?string
+  public function getReview()
   {
     return $this->review;
   }
@@ -169,9 +169,14 @@ class Project
   /**
    * @param $review
    * @return Project
+   * @throws Exception
    */
   public function setReview($review = null): Project
   {
+    if (!is_string($review)) {
+      throw new Exception('Provided value is not text');
+    }
+
     $this->review = $review;
     return $this;
   }

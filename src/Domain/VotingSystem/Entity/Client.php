@@ -4,6 +4,7 @@ namespace App\Domain\VotingSystem\Entity;
 
 use App\Core\Doctrine\Traits\Identity;
 use App\Core\Doctrine\Traits\Created;
+use App\Domain\VotingSystem\Repository\ClientRepository;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
@@ -46,7 +47,7 @@ class Client
    *
    * @var ArrayCollection|Collection
    */
-  #[OneToMany(mappedBy: "client", targetEntity: Project::class)]
+  #[OneToMany(mappedBy: "creator", targetEntity: Project::class)]
   private Collection|ArrayCollection $projects;
 
   public function __construct()
