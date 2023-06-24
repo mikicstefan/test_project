@@ -41,8 +41,6 @@ class ProjectRepresentation
   private function __construct(
     private int      $id,
     private string   $title,
-    private Client $creator,
-    private ?Vico $vico,
     private ?int $rating,
     private $review = null,
     private ?int $communicationRating,
@@ -63,8 +61,6 @@ class ProjectRepresentation
     return new self(
       $project->getId(),
       $project->getTitle(),
-      $project->getCreator(),
-      $project->getVico(),
       $project->getRating(),
       $project->getReview(),
       $project->getCommunicationRating(),
