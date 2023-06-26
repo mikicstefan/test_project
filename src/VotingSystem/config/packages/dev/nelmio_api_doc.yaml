@@ -4,4 +4,4 @@ nelmio_api_doc:
       disable_default_routes: true
 
 imports:
-  - { resource: '../../../../docs/voting_system_api.yaml' }
+  - { resource: '../../../../../docs/voting_system_api.yaml' }
