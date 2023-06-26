@@ -53,7 +53,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $response = (array)json_decode((string) $this->client->getResponse()->getContent(), true);
@@ -83,7 +85,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     /** @var array<string> $response */
@@ -111,7 +115,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     /** @var array<string> $response */
@@ -141,7 +147,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
 
@@ -179,7 +187,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $response = (array)json_decode((string) $this->client->getResponse()->getContent(), true);
@@ -213,7 +223,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $response = (array)json_decode((string) $this->client->getResponse()->getContent(), true);
@@ -247,7 +259,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $response = (array)json_decode((string) $this->client->getResponse()->getContent(), true);
@@ -281,7 +295,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $response = (array)json_decode((string) $this->client->getResponse()->getContent(), true);
@@ -314,6 +330,7 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
       [],
       [
         'CONTENT_TYPE' => 'application/json',
+        'HTTP_authorization' => $this->authToken
       ],
       json_encode([
         'rating' => self::TEST_PROJECT_RATING,
@@ -354,6 +371,7 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
       [],
       [
         'CONTENT_TYPE' => 'application/json',
+        'HTTP_authorization' => $this->authToken
       ],
       json_encode([
         'rating' => self::TEST_PROJECT_RATING,
@@ -394,7 +412,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'value_for_money_rating' => self::TEST_PROJECT_RETURN_VALUE_RATING
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $response = (array)json_decode((string) $this->client->getResponse()->getContent(), true);
@@ -428,7 +448,9 @@ Society excited by cottage private an it esteems. Fully begin on by wound an. Gi
         'review' => self::TEST_PROJECT_REVIEW_LONG
       ],
       [],
-      []
+      [
+        'HTTP_authorization' => $this->authToken
+      ]
     );
 
     $this->assertResponseIsSuccessful();
